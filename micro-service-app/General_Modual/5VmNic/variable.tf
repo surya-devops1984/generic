@@ -1,0 +1,10 @@
+variable "nic_name" {}
+variable "vm_name" {}
+variable "vm_admin_username" {}
+variable "vm_admin_userpassword" {}
+variable "rg_name" {}
+variable "subnet_name" {}
+variable "vnet_name" {}
+variable "pip_name" {}
+variable "lb_name" {}
+variable "lb_backend_pool_name" {}
