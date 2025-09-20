@@ -11,6 +11,9 @@ jobs:
     permissions:
       id-token: write    #OIDC token lene ke liye zaruri hai
       contents: read
+    defaults:
+      run:
+        working-directory: micro-service-app/Env/dev
     steps:  
         - name: Checkout code
           uses: actions/checkout@v3
@@ -32,7 +35,7 @@ jobs:
         - name: Check Terraform version
           run: terraform -version
         - name: Terraform init
-          run: terraform init  
+          run: terraform init 
         - name: Terraform validate
           run: terraform validate
         - name: Terraform plan
