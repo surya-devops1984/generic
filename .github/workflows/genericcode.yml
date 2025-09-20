@@ -1,0 +1,40 @@
+name: surya testing 20Sep25
+
+on:
+  push:
+    branches:
+    - main
+    - feature/*
+jobs:
+  production-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write    #OIDC token lene ke liye zaruri hai
+      contents: read
+    steps:  
+        - name: Checkout code
+          uses: actions/checkout@v3
+          
+        - name: Azure Login
+          uses: Azure/login@v2.3.0
+          with:            
+              client-id: c578a89c-8feb-4f2f-88cb-8c48581bd989
+              tenant-id: defb5fbe-74e0-453c-9d33-594936bf34c5
+              subscription-id: 81cc1915-8d88-419e-8fa3-0178811761bd
+              environment: azurecloud
+              auth-type: SERVICE_PRINCIPAL
+              
+        - name: HashiCorp - Setup Terraform
+          uses: hashicorp/setup-terraform@v2.0.3
+          with:
+            terraform_version: latest
+          
+        - name: Check Terraform version
+          run: terraform -version
+        - name: Terraform init
+          run: terraform init  
+        - name: Terraform validate
+          run: terraform validate
+        - name: Terraform plan
+          run: terraform plan
+            
