@@ -1,5 +1,6 @@
 module "rg" {
   source = "../../General_Modual/1Resource Group"
-  rg_name = "suryatrg"
-  rg_location = "central india"
+  for_each = var.rg
+  rg_name = each.value.name
+  rg_location = each.value.location
 }
