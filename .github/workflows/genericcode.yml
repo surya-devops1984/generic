@@ -1,10 +1,10 @@
 name: surya testing 20Sep25
 
-on:
-  push:
-    branches:
-    - main
-    - feature/*
+#on:
+  #push:
+    #branches:
+    #- main
+    #- feature/*
 jobs:
   production-deploy:
     runs-on: ubuntu-latest
