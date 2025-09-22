@@ -1,6 +1,7 @@
 name: surya testing 20Sep25
 
 on:
+  workflow_dispatch: 
   push:
     branches:
     - main
