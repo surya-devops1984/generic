@@ -44,14 +44,14 @@ jobs:
             ARM_SUBSCRIPTION_ID: 81cc1915-8d88-419e-8fa3-0178811761bd
         - name: Terraform validate
           run: terraform validate
-           env:
+          env:
             ARM_USE_OIDC: true
             ARM_CLIENT_ID: c578a89c-8feb-4f2f-88cb-8c48581bd989
             ARM_TENANT_ID: defb5fbe-74e0-453c-9d33-594936bf34c5
             ARM_SUBSCRIPTION_ID: 81cc1915-8d88-419e-8fa3-0178811761bd
         - name: Terraform plan
           run: terraform plan
-           env:
+          env:
             ARM_USE_OIDC: true
             ARM_CLIENT_ID: c578a89c-8feb-4f2f-88cb-8c48581bd989
             ARM_TENANT_ID: defb5fbe-74e0-453c-9d33-594936bf34c5
